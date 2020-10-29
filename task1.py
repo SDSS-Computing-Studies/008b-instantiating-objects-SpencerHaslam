@@ -73,3 +73,55 @@ Buster dog
 Shih-tzu is owned by Christy
 (10 points) 
 """
+class vet:
+    animal = None
+    breed = None
+    name = None
+    owner = None
+    birthdate = None
+
+    def __init__(self):
+        print("\n")
+        self.animal = input("Type of animal?:")
+        self.breed = input("Breed?:")
+        self.name = input("Name?:")
+        self.owner = input("Owner?:")
+        self.birthdate = input("Birthdate?:")
+
+    def display(self):
+        print(self.animal)
+        print(self.breed)
+        print(self.name)
+        print(self.owner)
+        print(self.birthdate)
+
+animals = []
+
+def main():
+    while True:
+        print("\n")
+        print("1. Enter a new pet")
+        print("2. Retrieve a pet")
+        print("3. Exit")
+        q = int(input())
+
+        if q == 1:
+            animals.append( vet() )
+        
+        elif q == 2:
+            # ask for the name you're searching for
+            naem = input("Which Pet?:")
+            lisslocation = 0
+            #cycles through all the animals
+            for i in animals:
+                if i.name == naem:
+                    animals[lisslocation].display()
+                    #display(animals[lisslocation])
+                else:
+                    lisslocation = lisslocation + 1
+                #try to see if names match
+        
+        elif q == 3:
+            break
+
+main()
